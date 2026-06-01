@@ -1,5 +1,5 @@
 /* ================================================================
-   Chillswithills — Lifestyle Hub
+   Chillswithiyls — Lifestyle Hub
    Palette: deep earth / rust amber / olive green / warm cream
    ================================================================ */
 
@@ -70,7 +70,7 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center;
   background:
     linear-gradient(160deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.72) 100%),
-    url('https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1586348943529-beaae6c28db9?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
