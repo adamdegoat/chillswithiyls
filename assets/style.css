@@ -452,10 +452,12 @@ a { color: inherit; text-decoration: none; }
 .weather-loading { font-size: 10px; color: var(--muted); padding: 0 14px; display: flex; align-items: center; }
 
 @media (max-width: 700px) {
+  .weather-panel { padding: 0; overflow: hidden; }
+  .weather-inner { padding: 0 16px; }
   .weather-bar { flex-direction: column; }
   .weather-label-col { flex-direction: row; align-items: center; gap: 8px; border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; }
-  .weather-locs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .weather-loc, .weather-loc--divider { border-right: 1px solid var(--border); border-bottom: none; min-width: 140px; padding: 8px 12px; }
+  .weather-locs { display: flex; flex-direction: row; flex-wrap: nowrap; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; flex: none; }
+  .weather-loc, .weather-loc--divider { flex-shrink: 0; width: 155px; border-right: 1px solid var(--border); border-bottom: none; padding: 10px 10px; }
   .weather-loc:last-child { border-right: none; }
 }
 
