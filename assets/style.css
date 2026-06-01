@@ -454,9 +454,9 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 700px) {
   .weather-bar { flex-direction: column; }
   .weather-label-col { flex-direction: row; align-items: center; gap: 8px; border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; }
-  .weather-locs { flex-direction: column; overflow-x: visible; }
-  .weather-loc, .weather-loc--divider { border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; }
-  .weather-loc:last-child { border-bottom: none; }
+  .weather-locs { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .weather-loc, .weather-loc--divider { border-right: 1px solid var(--border); border-bottom: none; min-width: 140px; padding: 8px 12px; }
+  .weather-loc:last-child { border-right: none; }
 }
 
 /* ─── GUIDE PAGES — HERO + INLINE IMAGES ───────────────────── */
