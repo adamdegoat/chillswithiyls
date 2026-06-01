@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://adamdegoat.github.io/chillswithiyls/assets/style.css?v=202606012319">
+<link rel="stylesheet" href="https://adamdegoat.github.io/chillswithiyls/assets/style.css?v=202606020516">
 </head>
 <body>
 
@@ -39,9 +39,6 @@
       <a href="https://adamdegoat.github.io/chillswithiyls/">Today</a>
       <a href="https://adamdegoat.github.io/chillswithiyls/archive.html">Archive</a>
       <a href="https://adamdegoat.github.io/chillswithiyls/#how-it-works">About</a>
-      <span class="mast-live">
-        <span class="mast-live-dot"></span>Updated daily · 5 AM SGT
-      </span>
     </nav>
   </div>
 </header>
@@ -111,12 +108,12 @@
 <script>
 (function() {
   var LOCS = [
-    { name: 'North Malaysia',   sub: 'MY', lat: 5.4141,  lon: 100.3288, tz: 'Asia/Kuala_Lumpur' },
-    { name: 'Central Malaysia', sub: 'MY', lat: 4.4696,  lon: 101.3810, tz: 'Asia/Kuala_Lumpur' },
-    { name: 'South Malaysia',   sub: 'MY', lat: 2.4449,  lon: 103.8397, tz: 'Asia/Kuala_Lumpur' },
-    { name: 'North Thailand',   sub: 'TH', lat: 18.7883, lon: 98.9853,  tz: 'Asia/Bangkok' },
-    { name: 'Central Thailand', sub: 'TH', lat: 14.4260, lon: 101.3686, tz: 'Asia/Bangkok' },
-    { name: 'South Thailand',   sub: 'TH', lat: 8.0863,  lon: 98.9063,  tz: 'Asia/Bangkok' }
+    { name: 'Cameron Highlands', sub: 'MY', lat: 4.4696, lon: 101.3810, tz: 'Asia/Kuala_Lumpur' },
+    { name: "Fraser's Hill",     sub: 'MY', lat: 3.7167, lon: 101.7333, tz: 'Asia/Kuala_Lumpur' },
+    { name: 'Taman Negara',      sub: 'MY', lat: 4.7167, lon: 102.3833, tz: 'Asia/Kuala_Lumpur' },
+    { name: 'Chiang Mai',        sub: 'TH', lat: 18.7883, lon: 98.9853, tz: 'Asia/Bangkok' },
+    { name: 'Khao Yai',          sub: 'TH', lat: 14.4260, lon: 101.3686, tz: 'Asia/Bangkok' },
+    { name: 'Krabi',             sub: 'TH', lat: 8.0863,  lon: 98.9063,  tz: 'Asia/Bangkok' }
   ];
   var WMO = {
     0:'\u2600\ufe0f',1:'\ud83c\udf24\ufe0f',2:'\u26c5',3:'\u2601\ufe0f',
@@ -341,6 +338,44 @@
 </section>
 
   
+<section class="the-drop" id="the-drop">
+  <div class="drop-inner">
+    <div class="drop-header">
+      <span class="drop-eyebrow">Today's Briefing</span>
+      <h2 class="drop-heading">The Drop</h2>
+      <p class="drop-sub">Gear, trails, builds, and what's moving in the overlanding and off-grid world.</p>
+    </div>
+    <div class="drop-grid">
+      
+<div class="drop-card">
+  <div class="drop-pill drop-pill--gear">Gear Pick</div>
+  <h3 class="drop-title">Maxtrax MKII Recovery Boards</h3>
+  <p class="drop-verdict">The difference between stuck and saved</p>
+  <p class="drop-body">Full-length fibre-reinforced nylon boards that give a spinning tyre something to bite on soft sand, mud, or clay. At 1,145mm long and 2.7kg each, they&#x27;re light enough to reach for before the winch cable comes out. One honest limitation: they bridge two tyres at a time — if you&#x27;re genuinely buried, you&#x27;ll need a second pair or a systematic re-positioning sequence to work your way out.</p>
+  <span class="drop-price">$220–260 USD per pair (AUD ~$350–400)</span>
+</div>
+      
+<div class="drop-card">
+  <div class="drop-pill drop-pill--trail">Trail Intel</div>
+  <h3 class="drop-title">Mount Bromo, Tengger Semeru National Park, East Java, Indonesia</h3>
+  <p class="drop-access">Sealed road to Cemoro Lawang village, then unsealed sand track across the Tengger caldera — minimum 200mm ground clearance required; rangers enforce it at the checkpoint.</p>
+  <p class="drop-body">Almost everyone joins the 3am jeep convoy to catch sunrise from the main viewpoint, which means thousands of vehicles descending simultaneously. Arrive at the caldera rim by 6:30am and you&#x27;ll have the sand sea nearly to yourself with warmer light. The floor route between Bromo&#x27;s crater and the Widodaren viewpoint is the stretch most people skip entirely — and it&#x27;s the best part of the whole drive.</p>
+  <span class="drop-season">Best season: April–October (dry season — the caldera floor track becomes a sand trap after wet-season rains)</span>
+</div>
+      
+<div class="drop-card">
+  <div class="drop-pill drop-pill--build">Build Tip</div>
+  <h3 class="drop-title">Wiring a DC-DC charger to your auxiliary LiFePO4 battery</h3>
+  <ol class='drop-steps'><li>Select a DC-DC charger matched to your alternator output — the Victron Orion-Tr Smart 30A or REDARC BCDC1225D are well-proven options. For a 100Ah LiFePO4 bank, 25–30A input is the right range; pushing more loads the alternator hard at idle.</li><li>Run a cable (minimum 6 B&amp;S / 10 AWG) from your starter battery positive terminal through a 50A ANL fuse mounted as close to the starter battery as possible. This fuse protects the wiring run — it needs to be at the source, not mid-run.</li><li>Mount the charger in a ventilated spot away from heat sources. Most DC-DC chargers operate to 40°C and throttle output above that — engine bay mounting works but keep it away from the exhaust manifold and the firewall hot zone.</li><li>Run the output cable to the auxiliary battery positive through a second ANL fuse, and run dedicated earth cables from both the charger body and the aux battery negative to a clean chassis ground — not daisy-chained together.</li><li>Set the charge profile for LiFePO4: 14.2–14.6V absorption, 13.6V float. Most modern DC-DC chargers have a preset for this, but verify the voltage setpoints in the configuration menu before connecting the battery.</li></ol>
+</div>
+      
+<div class="drop-card">
+  <div class="drop-pill drop-pill--radar">On The Radar</div>
+  <ul class="drop-radar"><li>The Nissan Frontier PRO-4X was named Overland Expo West 2026&#x27;s Ultimate Build at Flagstaff in May — the first mid-size truck to take the title in several years, signalling a broad shift away from maximum-modification full-sizers toward practical, trail-ready rigs.</li><li>The Rainforest Challenge Grand Final 2026 has opened early-bird registration through August, with the world&#x27;s most demanding jungle off-road event expected back on Malaysian terrain — entry slots have historically filled months ahead of the event.</li><li>Sabah Tourism Board is developing an off-grid camp operator certification programme under the Visit Malaysia 2026 campaign, positioning Sabah as a regional benchmark for adventure camping — which may eventually mean more standardised site access on tracks that currently have no infrastructure at all.</li></ul>
+</div>
+    </div>
+  </div>
+</section>
   
 <section class="from-trail" id="from-trail">
   <div class="section-inner">
@@ -349,44 +384,44 @@
       <span class="section-sub">Camping, overlanding and off-grid news from Southeast Asia and beyond.</span>
     </div>
     <div class="news-grid">
-<a class="news-card" href="https://newatlas.com/rvs-motorhomes/camping-adventure-vehicles-bangkok-motor-show-2026/" target="_blank" rel="noopener">
-  <div class="news-img" style="background-image:url(https://assets.newatlas.com/dims4/default/6d1054d/2147483647/strip/true/crop/1813x1209+0+69/resize/1200x800!/format/webp/quality/85/?url=https%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Fc2%2F31%2Fd303dd6b4eb2a5e2915bf5a542bc%2F657363649-905613088907428-1461381567039380374-n-1.jpg)"></div>
+<a class="news-card" href="https://www.freemalaysiatoday.com/category/nation/2026/05/29/mobility-media-holds-inaugural-4x4-festival-offroad-in-the-city" target="_blank" rel="noopener">
+  <div class="news-img" style="background-image:url(https://media.freemalaysiatoday.com/wp-content/uploads/2026/05/f935ac99-maeps-serdang-emel-pic-290526-1.webp)"></div>
   <div class="news-body">
-    <span class="news-source">New Atlas</span>
-    <p class="news-hed">Campers, RVs and adventure rigs of the 2026 Bangkok Motor Show</p>
-    <p class="news-sum">Thailand&#x27;s 2026 Bangkok Motor Show showcased an impressive range of camping and adventure vehicles, highlighted by the debut of Sure Camper&#x27;s hard-sided pop-up camper built for the new Ford Ranger Super Duty.</p>
+    <span class="news-source">Free Malaysia Today</span>
+    <p class="news-hed">Malaysia&#x27;s First Urban 4×4 Festival &#x27;Offroad in the City&#x27; Opens at MAEPS Serdang</p>
+    <p class="news-sum">Mobility Media&#x27;s inaugural Oric festival (May 30–June 1) brings custom-built 4×4 rigs, overland workshops, and electric vehicles in Camp Mode to the Malaysia Agro Exposition Park — a first for the urban off-road scene.</p>
   </div>
 </a>
-<a class="news-card" href="https://www.micetraveladvisor.com/news/article/thailands-outdoor-fest-2026-a-landmark-event-in-adventure-travel/" target="_blank" rel="noopener">
-  <div class="news-img" style="background-image:url(https://www.micetraveladvisor.com/wp-content/uploads/2026/05/a-high-end-cinematic-photograph-of-an-el_KWrPGrYcXz2a4puXc_C5iA_6O5NirreQ7exofN7QcOz2Q_cover_sd.jpeg)"></div>
+<a class="news-card" href="https://www.nationthailand.com/news/tourism/40066673" target="_blank" rel="noopener">
+  <div class="news-img" style="background-image:url(https://media.nationthailand.com/uploads/images/md/2026/05/BlQ04L7pvXxJE5kXzQPt.webp)"></div>
   <div class="news-body">
-    <span class="news-source">MICE Travel Advisor</span>
-    <p class="news-hed">Thailand&#x27;s Outdoor Fest 2026 draws 65,000 visitors to Bangkok</p>
-    <p class="news-sum">Bangkok&#x27;s Outdoor Fest 2026 drew over 65,000 visitors from May 21–24, generating 200 million baht in economic impact through camping, trekking, climbing, and adventure tourism exhibits.</p>
+    <span class="news-source">Nation Thailand</span>
+    <p class="news-hed">Similan and Surin Islands Shut for Five-Month Annual Closure</p>
+    <p class="news-sum">Thailand&#x27;s Similan and Surin marine national parks closed May 15 and remain shut until mid-October, with coast guard enforcement — operators offering access during the closure face fines and licence revocation.</p>
   </div>
 </a>
-<a class="news-card" href="https://www.thestar.com.my/lifestyle/travel/2026/05/26/don039t-like-to-camp-don039t-worry-malaysia-has-cool-glamping-spots-too" target="_blank" rel="noopener">
-  <div class="news-img" style="background-image:url(https://apicms.thestar.com.my/uploads/images/2026/05/25/3925341.jpeg)"></div>
+<a class="news-card" href="https://www.theborneopost.com/2026/04/27/offroading-with-the-iron-lady-of-4x4-alison-murugesu/" target="_blank" rel="noopener">
+  <div class="news-img news-img--none"></div>
   <div class="news-body">
-    <span class="news-source">The Star</span>
-    <p class="news-hed">Malaysia&#x27;s best glamping spots for those who don&#x27;t want to rough it</p>
-    <p class="news-sum">Malaysia&#x27;s growing glamping scene offers nature-based stays across five states — from Langkawi&#x27;s floating coconut pods to cliffside retreats in Kota Tinggi — for travellers who want the outdoors without the tent.</p>
+    <span class="news-source">The Borneo Post</span>
+    <p class="news-hed">Offroading with the Iron Lady of 4x4, Alison Murugesu</p>
+    <p class="news-sum">Profile of Sabah&#x27;s veteran female 4x4 competitor Alison Murugesu, a long-standing figure in Kelab 4x4 Penampang whose decades on Borneo&#x27;s jungle trails have made her a benchmark for the region&#x27;s off-road community.</p>
   </div>
 </a>
-<a class="news-card" href="https://www.thestar.com.my/metro/metro-news/2026/05/27/camping-push-to-boost-eco-tourism-in-putrajaya" target="_blank" rel="noopener">
-  <div class="news-img" style="background-image:url(https://apicms.thestar.com.my/uploads/images/2026/05/27/3928596.jpg)"></div>
+<a class="news-card" href="https://hayuoprud.com/2026/04/25/overlanding-indonesia-resmi-dikukuhkan-di-dxi-2026-usung-misi-jelajah-nusantara-berbasis-sosial/" target="_blank" rel="noopener">
+  <div class="news-img news-img--none"></div>
   <div class="news-body">
-    <span class="news-source">The Star</span>
-    <p class="news-hed">Putrajaya upgrades campsite to boost eco-tourism in the wetlands</p>
-    <p class="news-sum">Putrajaya has expanded its Precinct 13 campsite to 48 lots for up to 200 campers as visitor numbers to the wetlands park climb toward 500,000 annually.</p>
+    <span class="news-source">Hayu Oprud</span>
+    <p class="news-hed">Overlanding Indonesia Officially Established at DXI 2026, Led by Social-Impact Expedition Mission</p>
+    <p class="news-sum">Indonesia&#x27;s overlanding community formalised its national leadership structure at the Deep and Extreme Indonesia expo in Jakarta, reframing the movement as a social-impact exploration initiative across the archipelago.</p>
   </div>
 </a>
-<a class="news-card" href="https://en.vietnamplus.vn/green-tourism-river-camping-boosts-rural-tourism-development-in-hanoi-post336418.vnp" target="_blank" rel="noopener">
-  <div class="news-img" style="background-image:url(https://mediaen.vietnamplus.vn/images/387b3176859011c444d835936ecdb519600b544f90979d80d9f03269f32ab3334a403cff42c825efa055e270e72f6873/104852-5843-1511.jpg.avif)"></div>
+<a class="news-card" href="https://radar.ph/camiguin-leans-into-solar-as-power-costs-push-change-across-the-island/" target="_blank" rel="noopener">
+  <div class="news-img" style="background-image:url(https://radar.ph/wp-content/uploads/2026/04/Camiguin-Solar-2.jpeg)"></div>
   <div class="news-body">
-    <span class="news-source">VietnamPlus</span>
-    <p class="news-hed">River camping programme boosts rural tourism near Hanoi</p>
-    <p class="news-sum">Da Phuc commune launched an experiential riverside camping programme along the Ca Lo River, blending outdoor stays with cultural heritage sites and traditional farming to drive rural economic growth.</p>
+    <span class="news-source">Radar Philippines</span>
+    <p class="news-hed">Camiguin Leans into Solar as Power Costs Push Change Across the Island</p>
+    <p class="news-sum">The Philippine island of Camiguin is rapidly expanding solar installations across government buildings, resorts, and households as frequent brownouts and high grid costs accelerate off-grid energy adoption.</p>
   </div>
 </a></div>
   </div>
