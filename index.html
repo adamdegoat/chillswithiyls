@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://adamdegoat.github.io/chillswithills/assets/style.css?v=202606012314">
+<link rel="stylesheet" href="https://adamdegoat.github.io/chillswithills/assets/style.css?v=202606012319">
 </head>
 <body>
 
@@ -96,9 +96,12 @@
 <section class="weather-panel" id="camp-weather">
   <div class="weather-inner">
     <div class="weather-bar">
-      <span class="weather-label">&#9679; Camp Weather</span>
+      <div class="weather-label-col">
+        <span class="weather-label">&#9679; Live</span>
+        <span class="weather-sublabel">Camp Weather</span>
+        <span class="weather-updated" id="weather-updated"></span>
+      </div>
       <div class="weather-locs" id="weather-grid"><span class="weather-loading">fetching&hellip;</span></div>
-      <span class="weather-updated" id="weather-updated"></span>
     </div>
   </div>
 </section>
@@ -106,8 +109,11 @@
 (function() {
   var LOCS = [
     { name: 'Cameron Highlands', sub: 'MY', lat: 4.4696, lon: 101.3810, tz: 'Asia/Kuala_Lumpur' },
-    { name: 'Chiang Mai', sub: 'TH', lat: 18.7883, lon: 98.9853, tz: 'Asia/Bangkok' },
-    { name: 'Krabi', sub: 'TH', lat: 8.0863, lon: 98.9063, tz: 'Asia/Bangkok' }
+    { name: "Fraser's Hill",     sub: 'MY', lat: 3.7167, lon: 101.7333, tz: 'Asia/Kuala_Lumpur' },
+    { name: 'Taman Negara',      sub: 'MY', lat: 4.7167, lon: 102.3833, tz: 'Asia/Kuala_Lumpur' },
+    { name: 'Chiang Mai',        sub: 'TH', lat: 18.7883, lon: 98.9853, tz: 'Asia/Bangkok' },
+    { name: 'Khao Yai',          sub: 'TH', lat: 14.4260, lon: 101.3686, tz: 'Asia/Bangkok' },
+    { name: 'Krabi',             sub: 'TH', lat: 8.0863,  lon: 98.9063,  tz: 'Asia/Bangkok' }
   ];
   var WMO = {
     0:'\u2600\ufe0f',1:'\ud83c\udf24\ufe0f',2:'\u26c5',3:'\u2601\ufe0f',
@@ -117,53 +123,64 @@
     80:'\ud83c\udf26\ufe0f',81:'\ud83c\udf27\ufe0f',82:'\u26c8\ufe0f',
     95:'\u26c8\ufe0f',96:'\u26c8\ufe0f',99:'\u26c8\ufe0f'
   };
-  function icon(code){ return WMO[code] || WMO[Math.floor(code/10)*10] || '\ud83c\udf21\ufe0f'; }
-  function outlook(rain, wind){
-    if (rain <= 20 && wind <= 25) return ['Good','#87ac65'];
-    if (rain <= 50 && wind <= 40) return ['Fair','#c8a85a'];
-    return ['Tough','#c8722a'];
+  function icon(c){ return WMO[c]||WMO[Math.floor(c/10)*10]||'\ud83c\udf21\ufe0f'; }
+  function outlook(rain,wind){
+    if(rain<=20&&wind<=25) return['Good','#87ac65'];
+    if(rain<=50&&wind<=40) return['Fair','#c8a85a'];
+    return['Tough','#c8722a'];
   }
-  var DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var grid = document.getElementById('weather-grid');
-  var upd  = document.getElementById('weather-updated');
-  if (!grid) return;
-  var pending = LOCS.length, items = new Array(LOCS.length);
-  LOCS.forEach(function(loc, idx) {
+  var DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var grid=document.getElementById('weather-grid');
+  var upd=document.getElementById('weather-updated');
+  if(!grid) return;
+  var pending=LOCS.length, items=new Array(LOCS.length);
+  LOCS.forEach(function(loc,idx){
     fetch('https://api.open-meteo.com/v1/forecast?latitude='+loc.lat+'&longitude='+loc.lon
-      +'&current=temperature_2m,weather_code,wind_speed_10m'
-      +'&daily=weather_code,temperature_2m_max,precipitation_probability_max'
+      +'&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,apparent_temperature'
+      +'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max'
       +'&timezone='+encodeURIComponent(loc.tz)+'&forecast_days=4')
-    .then(function(r){ return r.json(); })
-    .then(function(d) {
-      var cur = d.current, dl = d.daily;
-      var rain = dl.precipitation_probability_max[0] || 0;
-      var ol = outlook(rain, cur.wind_speed_10m);
-      var fcast = dl.time.slice(1,4).map(function(t,i){
-        var day = new Date(t);
-        return '<span class="wf-pill">'+DAYS[day.getDay()]+' '+icon(dl.weather_code[i+1])+' '
-          +Math.round(dl.temperature_2m_max[i+1])+'&deg;</span>';
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var cur=d.current, dl=d.daily;
+      var rain=dl.precipitation_probability_max[0]||0;
+      var ol=outlook(rain,cur.wind_speed_10m);
+      var fcast=dl.time.slice(1,4).map(function(t,i){
+        var day=new Date(t);
+        return '<span class="wf-pill">'
+          +DAYS[day.getDay()].slice(0,2)
+          +' '+icon(dl.weather_code[i+1])
+          +' '+Math.round(dl.temperature_2m_max[i+1])
+          +'/'+Math.round(dl.temperature_2m_min[i+1])+'&deg;'
+          +' <em>'+( dl.precipitation_probability_max[i+1]||0)+'%</em>'
+          +'</span>';
       }).join('');
-      var el = document.createElement('div');
-      el.className = 'weather-loc';
-      el.innerHTML =
+      var el=document.createElement('div');
+      el.className='weather-loc'+(idx===2?' weather-loc--divider':'');
+      el.innerHTML=
         '<div class="wl-top">'
           +'<span class="wl-name">'+loc.name+'</span>'
           +'<span class="wl-country">'+loc.sub+'</span>'
         +'</div>'
         +'<div class="wl-main">'
           +'<span class="wl-icon">'+icon(cur.weather_code)+'</span>'
-          +'<span class="wl-temp">'+Math.round(cur.temperature_2m)+'&deg;C</span>'
-          +'<span class="wl-score" style="color:'+ol[1]+'">'+ol[0]+' to camp</span>'
+          +'<span class="wl-temp">'+Math.round(cur.temperature_2m)+'&deg;</span>'
+          +'<span class="wl-feels">feels '+Math.round(cur.apparent_temperature)+'&deg;</span>'
+          +'<span class="wl-score" style="color:'+ol[1]+'">'+ol[0]+'</span>'
+        +'</div>'
+        +'<div class="wl-meta">'
+          +'<span>&#128167;'+cur.relative_humidity_2m+'%</span>'
+          +'<span>&#128168;'+Math.round(cur.wind_speed_10m)+'km/h</span>'
+          +'<span>&#127783;'+rain+'% rain</span>'
         +'</div>'
         +'<div class="wl-forecast">'+fcast+'</div>';
-      items[idx] = el;
-      if (--pending === 0) {
-        grid.innerHTML = '';
-        items.forEach(function(e){ if(e) grid.appendChild(e); });
-        var n = new Date();
-        upd.textContent = n.getHours()+':'+(n.getMinutes()<10?'0':'')+n.getMinutes();
+      items[idx]=el;
+      if(--pending===0){
+        grid.innerHTML='';
+        items.forEach(function(e){if(e)grid.appendChild(e);});
+        var n=new Date();
+        upd.textContent=n.getHours()+':'+(n.getMinutes()<10?'0':'')+n.getMinutes()+' SGT';
       }
-    }).catch(function(){ if(--pending===0 && !grid.children.length) grid.innerHTML=''; });
+    }).catch(function(){if(--pending===0&&!grid.children.length)grid.innerHTML='';});
   });
 })();
 </script>
