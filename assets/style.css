@@ -234,6 +234,127 @@ a:hover { color: var(--rust-lt); }
 }
 .card-link:hover { color: var(--rust-lt); }
 
+/* ─── THE DROP ─────────────────────────────────────────────── */
+
+.the-drop {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 24px;
+}
+
+.drop-inner { max-width: 1200px; margin: 0 auto; }
+
+.drop-header { margin-bottom: 36px; }
+
+.drop-eyebrow {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 8px;
+}
+
+.drop-heading {
+  font-family: var(--font-head);
+  font-size: 32px; font-weight: 800;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+
+.drop-sub {
+  font-size: 14px; color: var(--muted);
+}
+
+.drop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.drop-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: border-color 0.2s;
+}
+.drop-card:hover { border-color: rgba(200,114,42,0.3); }
+
+.drop-pill {
+  display: inline-block; align-self: flex-start;
+  font-size: 9px; font-weight: 800;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  border-radius: 4px;
+  padding: 3px 9px;
+}
+.drop-pill--gear  { background: rgba(200,114,42,0.12); color: var(--rust-lt); border: 1px solid rgba(200,114,42,0.3); }
+.drop-pill--trail { background: rgba(110,145,80,0.12); color: var(--olive-lt); border: 1px solid rgba(110,145,80,0.3); }
+.drop-pill--build { background: rgba(96,130,200,0.12); color: #8aaee8; border: 1px solid rgba(96,130,200,0.3); }
+.drop-pill--radar { background: rgba(180,140,80,0.10); color: #c8a85a; border: 1px solid rgba(180,140,80,0.25); }
+
+.drop-title {
+  font-family: var(--font-head);
+  font-size: 17px; font-weight: 700; line-height: 1.3;
+  color: var(--cream);
+}
+
+.drop-verdict {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--rust-lt);
+}
+
+.drop-body {
+  font-size: 14px; line-height: 1.65;
+  color: rgba(230,220,200,0.65);
+}
+
+.drop-access {
+  font-size: 12px; font-weight: 600;
+  color: var(--olive-lt);
+  letter-spacing: 0.02em;
+}
+
+.drop-season {
+  font-size: 12px; color: var(--muted);
+  font-style: italic;
+}
+
+.drop-price {
+  font-size: 13px; font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+}
+
+.drop-steps {
+  padding-left: 18px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.drop-steps li {
+  font-size: 13.5px; line-height: 1.6;
+  color: rgba(230,220,200,0.7);
+}
+
+.drop-radar {
+  list-style: none; padding: 0;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.drop-radar li {
+  font-size: 13.5px; line-height: 1.6;
+  color: rgba(230,220,200,0.7);
+  padding-left: 14px;
+  position: relative;
+}
+.drop-radar li::before {
+  content: '→';
+  position: absolute; left: 0;
+  color: var(--rust);
+  font-size: 11px; font-weight: 700;
+  top: 2px;
+}
+
 /* ─── FIELD TIP ────────────────────────────────────────────── */
 
 .field-tip {
