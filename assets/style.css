@@ -677,3 +677,94 @@ a { color: inherit; text-decoration: none; }
   .why-card:last-child { border-bottom: none; }
   .hero-content { padding: 28px 16px 44px; }
 }
+
+/* ─── CAYENNE COUNTRY ──────────────────────────────────────── */
+
+.cayenne-country {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 20px;
+}
+.cayenne-country .section-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.cayenne-country .section-header {
+  margin-bottom: 24px;
+}
+.cayenne-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--rust);
+  border-radius: 8px;
+  padding: 24px 26px;
+}
+.cayenne-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.cayenne-pill {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+  background: rgba(200, 114, 42, 0.1);
+  border: 1px solid rgba(200, 114, 42, 0.3);
+  border-radius: 3px;
+  padding: 2px 9px;
+}
+.cayenne-source {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.cayenne-headline {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.3;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+.cayenne-headline a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cayenne-headline a:hover { color: var(--rust-lt); }
+.cayenne-body {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+.cayenne-notes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cayenne-notes li {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  padding-left: 14px;
+  position: relative;
+}
+.cayenne-notes li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--rust);
+  font-weight: 700;
+}
