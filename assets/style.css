@@ -81,11 +81,11 @@ a { color: inherit; text-decoration: none; }
 
 .lifestyle-hero {
   position: relative;
-  min-height: 520px;
+  min-height: 620px;
   display: flex; align-items: center;
   background:
-    linear-gradient(160deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.72) 100%),
-    url('https://images.unsplash.com/photo-1592303032319-515be296cb1d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    linear-gradient(160deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.68) 100%),
+    url('hero.jpg') center 60%/cover no-repeat;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
@@ -413,6 +413,52 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 600px) {
   .philosophy { padding: 36px 20px; }
+}
+
+/* ─── SCENE BREAKS (immersive photo moments) ────────────────── */
+
+.scene-break {
+  position: relative;
+  height: 58vh; min-height: 300px; max-height: 540px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+}
+.scene-break::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.18) 0%,
+    rgba(0,0,0,0.62) 100%
+  );
+}
+.scene-text {
+  position: relative; z-index: 1;
+  padding: 0 36px 44px;
+  max-width: 860px;
+}
+.scene-eyebrow {
+  display: block;
+  font-size: 9px; font-weight: 800; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--rust-lt); margin-bottom: 10px; opacity: 0.9;
+}
+.scene-caption {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 4.5vw, 42px);
+  font-weight: 700; font-style: italic;
+  color: #fff; line-height: 1.2;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.55);
+}
+
+@media (max-width: 700px) {
+  .scene-break {
+    background-attachment: scroll;
+    height: 52vh;
+  }
+  .scene-text { padding: 0 20px 30px; }
 }
 
 /* ─── CAMP WEATHER PANEL ────────────────────────────────────── */
